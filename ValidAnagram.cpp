@@ -1,3 +1,14 @@
+/**
+ * @file ValidAnagram.cpp
+ * @author your name (you@domain.com)
+ * @brief First Solution to this Leetcode Problem
+ * @version 0.1
+ * @date 2023-10-02
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
+
 #include <iostream>
 #include <unordered_map>
 
