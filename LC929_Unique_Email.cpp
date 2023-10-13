@@ -4,6 +4,8 @@
 
 int numUniqueEmails(std::vector<std::string>& emails) 
 {
+    int count=0;
+
     for (auto itr = emails.begin(); itr != emails.end(); itr++)
     {
         std::cout << *itr << std::endl;
