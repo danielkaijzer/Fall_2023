@@ -12,25 +12,21 @@
 #include <iostream>
 #include <vector>
 
-std::vector<int> twoSum(std::vector<int>& nums, int target){
+std::vector<int> twoSum(std::vector<int>& numbers, int target){
     int start = 0;
-    int end = nums.size() -1;
+    int end = numbers.size() -1;
 
     while (start < end){
-        int index = start++;
-
-        while (index != end){
-            if (nums[start] + nums[index] == target){
-                return{start+1, index+1};
-            }
-            else if (nums[start] + nums[index] < target){
-                index++;
-            }
-            else{
-                end--;
-            }
+        int sum = numbers[start] + numbers[end];
+        if (sum == target){
+            return{start+1, end+1};
         }
-        start++;
+        else if(sum > target){
+            end--;
+        }
+        else{
+            start++;
+        }
     }
     return{};
 
