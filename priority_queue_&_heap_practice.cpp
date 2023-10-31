@@ -33,8 +33,14 @@ void insert( const int & x ){
     int copy = x; // make a copy of new value to be added
 
     array[0] = std::move(copy); // temporarily place new value at 0, which isn't used
-    for (; x < array[hole/2]; hole/=2) // if new_val is less than current location, move hole up the tree
-        array[hole] = std::move(array[hole/2]);
+
+    // if new_val is less than current location, move hole up the tree
+    for (; x < array[hole/2]; hole/=2) // after each iteration of loop we move hole to parent of previous hole location
+        
+        // move current parent value into current hole, 
+        // so we can move hole up without deleting value previously there
+        array[hole] = std::move(array[hole/2]); 
+        
     array[hole] = std::move(array[0]);
     
 }
