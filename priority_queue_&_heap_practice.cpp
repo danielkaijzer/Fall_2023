@@ -84,6 +84,17 @@ void percolateDown( int hole ){
     array[hole] = std::move(tmp);
 }
 
+
+
+/**
+ * Establish heap order property from an arbitrary
+ * arrangement of items. Runs in linear time.
+ */
+    // we iteratively call percolate down
+    // starting from rightmost/last parent node, 
+    // which is also the first non-leaf node from right end
+    // then we keep moving left towards root
+    // remember root is at 1 not 0 in this implementation
 void buildHeap( ){
     for (int i = currentSize/2; i > 0; --i){
         percolateDown(i);
