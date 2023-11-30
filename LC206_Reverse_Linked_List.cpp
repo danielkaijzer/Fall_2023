@@ -15,16 +15,15 @@ class Solution {
 public:
     ListNode* reverseList(ListNode* head) {
 
-        ListNode * prev = NULL;
-        ListNode * cur = head;
-        
-        while (cur != nullptr){
-            ListNode * next = cur->next;
-            cur->next = prev;
-            prev = cur;
-            cur = next;
+        if (head == nullptr || head->next == nullptr){
+            return head;
         }
-        return prev;
+
+        ListNode * newEnd = NULL;
+        ListNode * newHead = reverseList(head->next);
+        head->next->next = head;
+        head->next = newEnd;
+        return newHead;
     }
 };
 
@@ -36,6 +35,7 @@ Solution s;
     head->next = new ListNode(2);
     head->next->next = new ListNode(3);
     head->next->next->next = new ListNode(4);
+    head->next->next->next->next = new ListNode(5);
 
     // Reverse the linked list
     ListNode* reversedHead = s.reverseList(head);
