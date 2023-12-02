@@ -1,3 +1,15 @@
+/*
+Given the root of a binary tree, return its maximum depth.
+
+A binary tree's maximum depth
+is the number of nodes along
+the longest path from the root node
+down to the farthest leaf node.
+*/
+
+#include <iostream>
+#include <algorithm>
+
 // Definition for a binary tree node.
 struct TreeNode {
     int val;
@@ -11,6 +23,14 @@ struct TreeNode {
 class Solution {
 public:
     int maxDepth(TreeNode* root) {
-        
+        int max_depth = 1;
+
+        if (root == nullptr){
+            return 0;
+        }
+
+        max_depth += std::max(maxDepth(root->left), maxDepth(root->right)); 
+
+        return max_depth;
     }
 };

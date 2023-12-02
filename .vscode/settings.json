@@ -67,6 +67,8 @@
         "utility": "cpp",
         "unordered_set": "cpp",
         "stack": "cpp",
-        "lc104_max_depth_binary_tree": "cpp"
+        "lc104_max_depth_binary_tree": "cpp",
+        "deque": "cpp",
+        "queue": "cpp"
     }
 }
