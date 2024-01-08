@@ -24,7 +24,7 @@ public:
     }
 
     int top() {
-        stack_vector.at(stack_vector.size()-1);
+        return stack_vector.at(stack_vector.size()-1);
     }
     
     void pop() {
@@ -40,7 +40,6 @@ public:
     
     int getMin() {
         return ordered_list.front();
-        
     }
 };
 
