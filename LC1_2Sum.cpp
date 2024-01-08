@@ -6,7 +6,6 @@ using namespace std;
 
 vector<int> twoSum(vector<int>& nums, int target) {
     // add all unique nums to hashmap
-
     unordered_map<int,int> hashmap; // key: num, val: index
     
     // iterate through values and check if complement exists in hash map
@@ -19,7 +18,7 @@ vector<int> twoSum(vector<int>& nums, int target) {
         }
         // if complement isn't in our hashmap yet,
         // then add current element to hashmap
-        if (hashmap.count(nums.at(i)) < 0){
+        if (hashmap.count(nums.at(i)) < 1){
             hashmap.insert(make_pair(nums.at(i),i));
         }
     }
