@@ -9,9 +9,9 @@ vector<int> twoSum(vector<int>& nums, int target) {
 
     unordered_map<int,int> hashmap; // key: num, val: index
     
-    // iterate through valeus and check if complement exists in hash map
+    // iterate through values and check if complement exists in hash map
     for (int i = 0; i < nums.size(); ++i){
-        int complement = target - hashmap.at(i);
+        int complement = target - nums.at(i);
 
 
         if (hashmap.count(complement) > 0){
