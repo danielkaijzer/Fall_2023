@@ -7,6 +7,7 @@ find the length of the longest substring without repeating characters.
 
 
 #include <iostream>
+#include <unordered_set>
 
 using namespace std;
 
@@ -14,28 +15,25 @@ class Solution {
 public:
     int lengthOfLongestSubstring(string s) {
 
-        int start = 0;
-        int end = 1;
+        unordered_set<char> hs;
 
-        int temp_max = 0;
+        int l,r = 0;
         int max_length = 0;
 
-        while (end != s.size()-1){
-            // check if chars at two ptr locations are same
-            if (s[start] == s[end]){
-                // if they are same, move start to location of end to restart subtr
-                start = end;
-                temp_max = 0;
+        while (r < s.length()){
+
+            // if element doesn't exist in set, add it
+            if (hs.count(s[r]) == 0){
+                hs.insert(s[r]);
+                // check if current size of set is greater than max_length, update
+                if (hs.size() > max_length){
+                    max_length = hs.size();
+                }
+                r++; // iterate right pointer since we have substr of unique elements so far
             }
-            // if chars not same keep advancing substr
-                end++;
-            
-
-            temp_max = end - start; // get cur substr length
-
-            // if current subtr is longest, update max_length
-            if (temp_max > max_length){
-                max_length = temp_max;
+            else{ // if current element already exists in set, remove leftmost element
+                hs.erase(s[l]);
+                l++;
             }
 
         }
