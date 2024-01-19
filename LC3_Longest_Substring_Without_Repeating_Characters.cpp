@@ -17,7 +17,7 @@ public:
 
         unordered_set<char> hs;
 
-        int l,r = 0;
+        int l = 0,r = 0;
         int max_length = 0;
 
         while (r < s.length()){
